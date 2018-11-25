@@ -7,6 +7,9 @@ import torch
 import utils.gen_utils as gen_utils
 from GenericDataLoader import DataLoader
 import gc
+import pickle
+import pdb
+from string import punctuation
 
 '''
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
@@ -69,6 +72,58 @@ class SingleVideoHandler(object):
 
         #   a list of video tensors
         return {'video':ret_vid_list,'id_list':ret_id_list}
+
+
+class VideoTextHandler(SingleVideoHandler):
+    def __init__(self, video_root_path, text_root_path, dic, key_frame_interval=1, is_train=False):
+        self.key_frame_interval = key_frame_interval
+        self.video_root_path = video_root_path
+        self.text_root_path = text_root_path
+        self.dictionary = dic
+        self.start = dic['<start>']
+        self.eou = dic['<eou>']
+
+    def get_internal_data_batch(self,batch_id_list):
+        ret_vid_list = []
+        ret_txt_list = []
+        ret_id_list = []
+        ret_nnid_list = []
+        for vid_id in batch_id_list:
+            vid_fn = os.path.join(self.video_root_path,str(vid_id)+".npz")
+            if not os.path.isfile(vid_fn):
+                continue
+            ret_id_list.append(vid_id)
+
+            text_fn = os.path.join(self.text_root_path, str(vid_id) + '.pkl')
+            data = pickle.load(open(text_fn, 'rb'))
+            if data is str:
+                text = data.strip(punctuation)
+                text = [self.start] + [self.dictionary[w] for w in text.split()] + [self.eou]
+                ret_txt_list.append(text)
+            else:
+                text = data['txt'].strip(punctuation)
+                text = [self.start] + [self.dictionary[w] for w in text.split()] + [self.eou]
+                ret_txt_list.append(text)
+                nn_id = data['nn_id']
+                ret_nnid_list.append(nn_id)
+            '''
+            try:
+                vid_frames=gen_utils.read_frame_list_from_video_file_sk(vid_fn,verbose=False,max_fr=3000)
+            except:
+                vid_frames=None
+                print "video reading failed:",vid_fn
+                print "failed..."
+
+            vid_frames=self.sample_list_with_interval(vid_frames)
+
+            vid_frames=self.trans_into_tensor_for_feat_ext(vid_frames)
+            '''
+            vid_frames = np.load(vid_fn)['feat']
+
+            ret_vid_list.append(vid_frames)
+
+        #   a list of video tensors
+        return {'video':ret_vid_list,'id_list':ret_id_list, 'text': ret_txt_list, 'nn_id': ret_nnid_list}
 
 
 #   the tester for generic data loader

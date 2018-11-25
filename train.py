@@ -6,11 +6,13 @@ import numpy as np
 import sys
 from data_loader.GenericDataLoader import DataLoader
 from data_loader.SingleVideoPyTorchHandler import VideoTextHandler
-from model import Baseline
+from model import *
 from torch.nn.utils import clip_grad_norm
 
 
 dictionary = pickle.load(open('dictionary', 'rb'))
+#txt_root = '../TGIF/gt'
+txt_root = './gt_parsed'
 def get_loader(split):
     if split == 'train':
         cfg_list_fn = data_cfg.trn_list_fn
@@ -21,10 +23,11 @@ def get_loader(split):
     dataloader = DataLoader(img_list=pickle.load(open(cfg_list_fn, 'rb')),
                             batch_size=16,
                             num_worker=4,
-                            handler_obj=VideoTextHandler(video_root_path="../TGIF/features/resnet50", key_frame_interval=8, text_root_path='../TGIF/gt', dic=dictionary['word2id']))
+                            handler_obj=VideoTextHandler(video_root_path="../TGIF/features/resnet50", key_frame_interval=8, text_root_path=txt_root, dic=dictionary['word2id']))
     return dataloader
 
-model = Baseline(300, 2048, 512, 512, dictionary).cuda()
+#model = Baseline(300, 2048, 512, 512, dictionary).cuda()
+model = MoS(300, 2048, 512, 512, dictionary).cuda()
 for p in model.parameters():
     torch.nn.init.uniform_(p.data, a=-0.1, b=0.1)
 params = filter(lambda x: x.requires_grad, model.parameters())
