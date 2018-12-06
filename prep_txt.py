@@ -12,17 +12,20 @@ txt_dir = '../TGIF/gt'
 output_dir = './gt_parsed'
 txt_files = os.listdir(txt_dir)
 counter = Counter()
+nouns = Counter()
+verbs = Counter()
 for _, f in enumerate(txt_files):
     if _ % 1000 == 0:
         print(_)
     txt = pickle.load(open(os.path.join(txt_dir, f), 'rb'))
-    counter.update(txt.strip(punctuation).split())
-    '''
-    tags = nlp.pos_tag(txt.strip(punctuation))
+    tags = nlp.pos_tag(txt)
     counter.update([x[0] for x in tags])
-    pickle.dump({'txt': txt, 'tags': [x[1] for x in tags], 'nn_id': [x for x in range(len(tags)) if tags[x][1][:2] == 'NN']},
+    nouns.update([x[0] for x in tags if x[1][:2] == 'NN'])
+    verbs.update([x[0] for x in tags if x[1][:2] == 'VB'])
+    pickle.dump({'txt': [x[0] for x in tags], 'tags': [x[1] for x in tags], 
+                 'nn_id': [x for x in range(len(tags)) if tags[x][1][:2] == 'NN'],
+                 'vb_id': [x for x in range(len(tags)) if tags[x][1][:2] == 'VB']},
                 open(os.path.join(output_dir, f), 'wb'))
-    '''
 
 id2word = {}
 word2id = {}
@@ -36,5 +39,6 @@ for k, v in counter.items():
     word2id[k] = ind
     ind += 1
 
-pickle.dump({'id2word': id2word, 'word2id': word2id},
+pickle.dump({'id2word': id2word, 'word2id': word2id,
+             'nouns': nouns, 'verbs': verbs},
             open('dictionary', 'wb'))
