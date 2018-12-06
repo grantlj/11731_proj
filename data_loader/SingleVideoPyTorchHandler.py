@@ -75,10 +75,14 @@ class SingleVideoHandler(object):
 
 
 class VideoTextHandler(SingleVideoHandler):
-    def __init__(self, video_root_path, text_root_path, dic, key_frame_interval=1, is_train=False):
+    def __init__(self, video_root_path, text_root_path, obj_det_path, mot_rec_path, place_path, frame_path, dic, key_frame_interval=1, is_train=False):
         self.key_frame_interval = key_frame_interval
         self.video_root_path = video_root_path
         self.text_root_path = text_root_path
+        self.obj_det_path = obj_det_path
+        self.mot_rec_path = mot_rec_path
+        self.place_path = place_path
+        self.frame_path = frame_path
         self.dictionary = dic
         self.start = dic['<start>']
         self.eou = dic['<eou>']
@@ -88,42 +92,66 @@ class VideoTextHandler(SingleVideoHandler):
         ret_txt_list = []
         ret_id_list = []
         ret_nnid_list = []
+        ret_vbid_list = []
+        ret_tag_list = []
+        ret_obj_list = []
+        ret_mot_list = []
+        ret_frame_list = []
+        ret_place_list = []
         for vid_id in batch_id_list:
             vid_fn = os.path.join(self.video_root_path,str(vid_id)+".npz")
-            if not os.path.isfile(vid_fn):
+            mot_fn = os.path.join(self.mot_rec_path , str(vid_id) + '.npz')
+            frame_fn = os.path.join(self.frame_path , str(vid_id) + '.npz')
+            place_fn = os.path.join(self.place_path , str(vid_id) + '.npz')
+            if not os.path.isfile(vid_fn) or \
+               not os.path.isfile(mot_fn) or \
+               not os.path.isfile(frame_fn) or \
+               not os.path.isfile(place_fn):
                 continue
+
+            vid_frames = np.load(vid_fn)['feat']
             ret_id_list.append(vid_id)
+
+            '''
+            obj_fn = os.path.join(self.obj_det_path , str(vid_id) + '.pkl')
+            obj_det = pickle.load(open(obj_fn, 'rb'))
+            objects = [x['cat'] for d in obj_det for x in obj_det[d] if x['score'] > 0.8]
+            objects = list(set(objects))
+            ret_obj_list.append(objects)
+            '''
+
+            mot_rec = np.load(mot_fn)['feat']
+            ret_mot_list.append(mot_rec)
 
             text_fn = os.path.join(self.text_root_path, str(vid_id) + '.pkl')
             data = pickle.load(open(text_fn, 'rb'))
-            if data is str:
-                text = data.strip(punctuation)
-                text = [self.start] + [self.dictionary[w] for w in text.split()] + [self.eou]
-                ret_txt_list.append(text)
-            else:
-                text = data['txt'].strip(punctuation)
-                text = [self.start] + [self.dictionary[w] for w in text.split()] + [self.eou]
-                ret_txt_list.append(text)
-                nn_id = data['nn_id']
-                ret_nnid_list.append(nn_id)
-            '''
-            try:
-                vid_frames=gen_utils.read_frame_list_from_video_file_sk(vid_fn,verbose=False,max_fr=3000)
-            except:
-                vid_frames=None
-                print "video reading failed:",vid_fn
-                print "failed..."
-
-            vid_frames=self.sample_list_with_interval(vid_frames)
-
-            vid_frames=self.trans_into_tensor_for_feat_ext(vid_frames)
-            '''
-            vid_frames = np.load(vid_fn)['feat']
-
+        
+            text = data['txt']
+            text = [self.start] + [self.dictionary[w] for w in text] + [self.eou]
+            ret_txt_list.append(text)
+            nn_id = [x + 1 for x in data['nn_id']]
+            vb_id = [x + 1 for x in data['vb_id']]
+            ret_nnid_list.append(nn_id)
+            ret_vbid_list.append(vb_id)
+            tags = data['tags']
+            ret_tag_list.append(tags)
+            
             ret_vid_list.append(vid_frames)
 
+            frames = np.load(frame_fn)['feat']
+            ret_frame_list.append(frames)
+
+            places = np.load(place_fn)['feat']
+            ret_place_list.append(places)
+
         #   a list of video tensors
-        return {'video':ret_vid_list,'id_list':ret_id_list, 'text': ret_txt_list, 'nn_id': ret_nnid_list}
+        return {'video':ret_vid_list,'id_list':ret_id_list, 'text': ret_txt_list, 
+                'nn_id': ret_nnid_list, 
+                'vb_id': ret_vbid_list, 
+                'mot': ret_mot_list,
+                'frame': ret_frame_list,
+                'place': ret_place_list,
+                'tags': ret_tag_list, 'obj': ret_obj_list}
 
 
 #   the tester for generic data loader
