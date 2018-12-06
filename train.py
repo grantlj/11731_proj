@@ -59,6 +59,7 @@ for epoch in range(50):
         clip_grad_norm(params, 0.1)
         optimizer.step()
         it += 1
+
     val_loss = 0
     val_count = 0
     valid_dataloader.reset_reader()

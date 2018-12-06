@@ -13,7 +13,6 @@ import threading
 import moviepy.editor as mp
 
 
-
 ins_list_fn="/home/jiangl1/data/datasets/TGIF/TGIF-Release/data/tgif-v1.0.tsv"
 ins_list=gen_utils.read_lines_from_text_file(ins_list_fn)
 
@@ -25,9 +24,11 @@ org_trn_fn=os.path.join(org_split_root_path,"train.txt")
 org_val_fn=os.path.join(org_split_root_path,"val.txt")
 org_tst_fn=os.path.join(org_split_root_path,"test.txt")
 
+'''
 org_trn_lst=set(gen_utils.read_lines_from_text_file(org_trn_fn))
 org_val_lst=set(gen_utils.read_lines_from_text_file(org_val_fn))
 org_tst_lst=set(gen_utils.read_lines_from_text_file(org_tst_fn))
+
 
 trn_list=gen_utils.read_dict_from_pkl(data_cfg.trn_list_fn)
 val_list=gen_utils.read_dict_from_pkl(data_cfg.val_list_fn)
@@ -36,16 +37,19 @@ tst_list=gen_utils.read_dict_from_pkl(data_cfg.tst_list_fn)
 all_list=trn_list+val_list+tst_list
 
 gen_utils.write_dict_to_pkl(all_list,data_cfg.all_list_fn)
+'''
+all_list=gen_utils.read_dict_from_pkl(data_cfg.all_list_fn)
 
 print "Initialize finished..."
 
-MAX_TH=18
+
+MAX_TH=24
 
 def convert_gif_to_mp4(id):
     org_gif_fn=os.path.join(org_gif_root_path,str(id)+".gif")
     print org_gif_fn
-    assert os.path.isfile(org_gif_fn)
-
+    if not os.path.isfile(org_gif_fn):
+        return
 
     dst_mp4_fn=os.path.join(dst_video_root_path,str(id)+".mp4")
 
@@ -67,6 +71,7 @@ def filter_by_mp4(org_list):
             ret_list.append(id)
     return ret_list
 
+'''
 #   filter out irreleveant items
 if __name__=="__main__":
 
@@ -81,28 +86,26 @@ if __name__=="__main__":
     gen_utils.write_dict_to_pkl(new_tst_ids,data_cfg.tst_list_fn)
 
     print "done."
-
 '''
+
+
 if __name__=="__main__":
 
     thread_pool=[]
 
-    convert_gif_to_mp4(4)
 
     for id in all_list:
-
 
         th=threading.Thread(target=convert_gif_to_mp4,args=(id,))
         th.start()
         thread_pool.append(th)
         while len(threading.enumerate())>=MAX_TH:
             pass
-        #convert_gif_to_mp4(id)
 
     for th in thread_pool:
         th.join()
     print "done."
-'''
+
 
 '''
 if __name__=="__main__":
@@ -129,10 +132,9 @@ if __name__=="__main__":
 
     gen_utils.write_dict_to_pkl(trn_list,data_cfg.trn_list_fn)
     gen_utils.write_dict_to_pkl(val_list,data_cfg.val_list_fn)
-    gen_utils.write_dict_to_pkl(tst_list,data_cfg.tsta_list_fn)
+    gen_utils.write_dict_to_pkl(tst_list,data_cfg.tst_list_fn)
 
     print "done."
-
 '''
 
 

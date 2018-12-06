@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa31fdb1-79af-46fa-9d92-f409230e4ed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extract_features/extract_obj_detection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pre_processing/make_coco_label_map.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/coco_dataset_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/place365_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dudu_data_loader_verify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extract_features/extract_place365_features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extract_features/extract_two_stream_rgb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extract_features/resnet50_verify.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extract_features/twostream_rgb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miscs/verify_coco.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pre_processing/import_coco/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pre_processing/import_coco/import_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/extract_obj_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/extract_features/extract_obj_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extract_features/extract_resnet_features.py" beforeDir="false" afterPath="$PROJECT_DIR$/extract_features/extract_resnet_features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pre_processing/make_sets/import_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pre_processing/make_sets/import_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,51 +26,87 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/11731_proj$import_main__1_.coverage" NAME="import_main (1) Coverage Results" MODIFIED="1542342715253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/make_sets" />
-    <SUITE FILE_PATH="coverage/11731_proj$import_main.coverage" NAME="import_main Coverage Results" MODIFIED="1542216605480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/dataset_downloader" />
-    <SUITE FILE_PATH="coverage/11731_proj$extract_obj_detection.coverage" NAME="extract_obj_detection Coverage Results" MODIFIED="1542771744482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
-    <SUITE FILE_PATH="coverage/11731_proj$import_main__2_.coverage" NAME="import_main (2) Coverage Results" MODIFIED="1542511635119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/import_jiac_i3d" />
+    <SUITE FILE_PATH="coverage/11731_proj$verify_coco.coverage" NAME="verify_coco Coverage Results" MODIFIED="1543268443801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/miscs" />
+    <SUITE FILE_PATH="coverage/11731_proj$eval__1_.coverage" NAME="eval (1) Coverage Results" MODIFIED="1543126875066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/11731_proj$eval.coverage" NAME="eval Coverage Results" MODIFIED="1543125501392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/11731_proj$extract_place365_features.coverage" NAME="extract_place365_features Coverage Results" MODIFIED="1543358994910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
     <SUITE FILE_PATH="coverage/11731_proj$make_coco_label_map.coverage" NAME="make_coco_label_map Coverage Results" MODIFIED="1542771264455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing" />
+    <SUITE FILE_PATH="coverage/11731_proj$extract_two_stream_rgb.coverage" NAME="extract_two_stream_rgb Coverage Results" MODIFIED="1543370481763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
     <SUITE FILE_PATH="coverage/11731_proj$SingleVideoPyTorchHandler.coverage" NAME="SingleVideoPyTorchHandler Coverage Results" MODIFIED="1542322682527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_loader" />
-    <SUITE FILE_PATH="coverage/11731_proj$extract_resnet_features.coverage" NAME="extract_resnet_features Coverage Results" MODIFIED="1542480676180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
+    <SUITE FILE_PATH="coverage/11731_proj$dudu_data_loader_verify.coverage" NAME="dudu_data_loader_verify Coverage Results" MODIFIED="1543106850622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/11731_proj$extract_resnet_features.coverage" NAME="extract_resnet_features Coverage Results" MODIFIED="1543269165219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
+    <SUITE FILE_PATH="coverage/11731_proj$import_main__1_.coverage" NAME="import_main (1) Coverage Results" MODIFIED="1543192429422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/make_sets" />
+    <SUITE FILE_PATH="coverage/11731_proj$import_main.coverage" NAME="import_main Coverage Results" MODIFIED="1543191791234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/import_coco" />
+    <SUITE FILE_PATH="coverage/11731_proj$extract_obj_detection.coverage" NAME="extract_obj_detection Coverage Results" MODIFIED="1543344575058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
+    <SUITE FILE_PATH="coverage/11731_proj$import_main__2_.coverage" NAME="import_main (2) Coverage Results" MODIFIED="1542511635119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pre_processing/import_jiac_i3d" />
+    <SUITE FILE_PATH="coverage/11731_proj$resnet50_verify.coverage" NAME="resnet50_verify Coverage Results" MODIFIED="1542856549370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/extract_features" />
+    <SUITE FILE_PATH="coverage/11731_proj$train.coverage" NAME="train Coverage Results" MODIFIED="1543105971560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1572471830">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.0" value="9" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="5" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="39" />
+          <entry key="py" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PyRemoteDebug" value="5" />
-          <entry key="Python" value="34" />
+          <entry key="Python" value="83" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="7" />
-          <entry key="py" value="13016" />
+          <entry key="dummy" value="20" />
+          <entry key="py" value="18723" />
+          <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="13016" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="Python" value="18723" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extract_features/extract_two_stream_rgb.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/extract_features/extract_place365_features.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,6 +133,16 @@
       <find>gc.coll</find>
       <find>sample_list_with_interval</find>
       <find>video_list</find>
+      <find>self.</find>
+      <find>txt_hidden_size</find>
+      <find>org_trn_lst</find>
+      <find>org_gif_root_path</find>
+      <find>convert_gif_to_mp4</find>
+      <find>gen_utils.e</find>
+      <find>data_cfg</find>
+      <find>feat_root_path</find>
+      <find>feat_model</find>
+      <find>do_crop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,13 +154,28 @@
         <option value="$PROJECT_DIR$/pre_processing/dataset_downloader/import_main.py" />
         <option value="$PROJECT_DIR$/data_loader/SingleVideoHandler.py" />
         <option value="$PROJECT_DIR$/config/dataset_config.py" />
-        <option value="$PROJECT_DIR$/pre_processing/make_sets/import_main.py" />
         <option value="$PROJECT_DIR$/data_loader/SingleVideoPyTorchHandler.py" />
         <option value="$PROJECT_DIR$/data_loader/GenericDataLoader.py" />
-        <option value="$PROJECT_DIR$/extract_features/extract_resnet_features.py" />
         <option value="$PROJECT_DIR$/pre_processing/import_jiac_i3d/import_main.py" />
         <option value="$PROJECT_DIR$/pre_processing/make_coco_label_map.py" />
+        <option value="$PROJECT_DIR$/extract_features/resnet50_verify.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/dudu_data_loader_verify.py" />
+        <option value="$PROJECT_DIR$/model.py" />
+        <option value="$PROJECT_DIR$/config/coco_dataset_config.py" />
+        <option value="$PROJECT_DIR$/eval/coco-caption/__init__.py" />
+        <option value="$PROJECT_DIR$/eval/__init__.py" />
+        <option value="$PROJECT_DIR$/eval/eval.py" />
+        <option value="$PROJECT_DIR$/eval/dudu_eval.py" />
+        <option value="$PROJECT_DIR$/eval/coco-caption/pycocoevalcap/bleu/bleu.py" />
+        <option value="$PROJECT_DIR$/pre_processing/import_coco/import_main.py" />
+        <option value="$PROJECT_DIR$/pre_processing/make_sets/import_main.py" />
+        <option value="$PROJECT_DIR$/miscs/verify_coco.py" />
+        <option value="$PROJECT_DIR$/extract_features/extract_resnet_features.py" />
         <option value="$PROJECT_DIR$/extract_features/extract_obj_detection.py" />
+        <option value="$PROJECT_DIR$/config/place365_config.py" />
+        <option value="$PROJECT_DIR$/extract_features/extract_two_stream_rgb.py" />
+        <option value="$PROJECT_DIR$/extract_features/extract_place365_features.py" />
       </list>
     </option>
   </component>
@@ -113,10 +186,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="189" />
-    <option name="y" value="23" />
-    <option name="width" value="1490" />
-    <option name="height" value="931" />
+    <option name="x" value="82" />
+    <option name="y" value="42" />
+    <option name="width" value="1400" />
+    <option name="height" value="953" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -124,6 +197,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,27 +213,21 @@
             <path>
               <item name="11731_proj" type="b2602c69:ProjectViewProjectNode" />
               <item name="11731_proj" type="462c0819:PsiDirectoryNode" />
-              <item name="data_loader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="11731_proj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="11731_proj" type="462c0819:PsiDirectoryNode" />
               <item name="extract_features" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="11731_proj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="11731_proj" type="462c0819:PsiDirectoryNode" />
-              <item name="pre_processing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -174,6 +242,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extract_features" />
+      <recent name="$PROJECT_DIR$/eval" />
+      <recent name="$PROJECT_DIR$/eval/coco-caption" />
       <recent name="$PROJECT_DIR$/pre_processing/make_sets" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -190,7 +261,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.extract_obj_detection">
+  <component name="RunManager" selected="Python.extract_two_stream_rgb">
     <configuration name="extract_obj_detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="11731_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -200,7 +271,6 @@
         <env name="PATH" value="/usr/local/cuda/bin:$PATH" />
         <env name="LD_LIBRARY_PATH" value="/usr/local/cuda/lib64:$LD_LIBRARY_PATH" />
         <env name="CUDA_VISIBLE_DEVICES" value="1" />
-        <env name="PYTHONPATH" value="$PYTHONPATH:home/jiangl1/tensorflow/models/research/slim/:/home/jiangl1/tensorflow/models/research/object_detection/" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extract_features" />
@@ -209,6 +279,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_features/extract_obj_detection.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="extract_place365_features" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="11731_proj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extract_features" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_features/extract_place365_features.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -239,7 +331,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="import_main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="extract_two_stream_rgb" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="11731_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -247,12 +339,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pre_processing/make_sets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extract_features" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre_processing/make_sets/import_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extract_features/extract_two_stream_rgb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -261,7 +353,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="import_main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="verify_coco" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="11731_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -269,34 +361,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pre_processing/import_jiac_i3d" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/miscs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre_processing/import_jiac_i3d/import_main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="make_coco_label_map" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="11731_proj" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pre_processing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pre_processing/make_coco_label_map.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/miscs/verify_coco.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -306,19 +376,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.import_main (1)" />
+      <item itemvalue="Python.verify_coco" />
       <item itemvalue="Python.extract_resnet_features" />
-      <item itemvalue="Python.import_main (2)" />
       <item itemvalue="Python.extract_obj_detection" />
-      <item itemvalue="Python.make_coco_label_map" />
+      <item itemvalue="Python.extract_place365_features" />
+      <item itemvalue="Python.extract_two_stream_rgb" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.extract_two_stream_rgb" />
+        <item itemvalue="Python.extract_place365_features" />
         <item itemvalue="Python.extract_obj_detection" />
-        <item itemvalue="Python.make_coco_label_map" />
-        <item itemvalue="Python.import_main (2)" />
         <item itemvalue="Python.extract_resnet_features" />
-        <item itemvalue="Python.import_main (1)" />
+        <item itemvalue="Python.verify_coco" />
       </list>
     </recent_temporary>
   </component>
@@ -333,56 +403,65 @@
       <option name="presentableId" value="Default" />
       <updated>1542211696465</updated>
     </task>
+    <task id="LOCAL-00001" summary="sync.">
+      <created>1542777811975</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542777811975</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="189" y="23" width="1490" height="931" extended-state="0" />
+    <frame x="82" y="42" width="1400" height="953" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19889502" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.23269513" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.329849" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="4" weight="0.32729468" />
+      <window_info anchor="bottom" id="File Transfer" order="4" weight="0.3263647" />
       <window_info anchor="bottom" id="Python Console" order="5" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.32850242" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.3659118" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.32752612" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.3646922" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Remote Host" order="2" />
+      <window_info anchor="right" id="Remote Host" order="2" weight="0.3298969" />
       <window_info anchor="right" id="Commander" order="3" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.19935691" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.23269513" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.329849" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="4" weight="0.32729468" />
+      <window_info anchor="bottom" id="File Transfer" order="4" weight="0.3263647" />
       <window_info anchor="bottom" id="Python Console" order="5" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Debug" order="10" visible="true" weight="0.3659118" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.32752612" />
+      <window_info active="true" anchor="bottom" id="Debug" order="10" visible="true" weight="0.3646922" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="right" id="SciView" order="0" />
       <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Remote Host" order="2" />
+      <window_info anchor="right" id="Remote Host" order="2" weight="0.3298969" />
       <window_info anchor="right" id="Commander" order="3" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
@@ -394,32 +473,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sync." />
+    <option name="LAST_COMMIT_MESSAGE" value="sync." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pre_processing/make_sets/import_main.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/extract_features/extract_resnet_features.py</url>
-          <line>111</line>
+          <line>112</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_loader/SingleVideoPyTorchHandler.py</url>
-          <line>61</line>
+          <line>64</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/pre_processing/make_sets/import_main.py</url>
-          <line>82</line>
+          <line>87</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/extract_features/extract_resnet_features.py</url>
-          <line>87</line>
+          <line>88</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -429,13 +507,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/extract_features/extract_resnet_features.py</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data_loader/GenericDataLoader.py</url>
-          <line>130</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_loader/GenericDataLoader.py</url>
@@ -444,7 +517,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/extract_features/extract_obj_detection.py</url>
-          <line>121</line>
+          <line>122</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -452,28 +525,49 @@
           <line>19</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extract_features/resnet50_verify.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/eval/eval_org.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pre_processing/import_coco/import_main.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pre_processing/make_sets/import_main.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extract_features/extract_obj_detection.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/extract_features/extract_place365_features.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pre_processing/dataset_downloader/import_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/remote_sources/1781803575/-1227933812/torchvision/transforms/functional.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/remote_sources/1781803575/-1227933812/torch/nn/modules/module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="517" selection-start-line="517" selection-end-line="517" />
         </state>
       </provider>
     </entry>
@@ -484,30 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/dataset_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.3/remote_sources/1781803575/201544331/zipfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="1118" selection-start-line="1118" selection-end-line="1118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pre_processing/make_sets/import_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <marker date="1542342714676" expanded="true" signature="1305:2341" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -522,21 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1542511648492" expanded="true" signature="1417:1773" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extract_features/extract_obj_detection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1542777736010" expanded="true" signature="997:3990" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,10 +606,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/extract_features/resnet50_verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dudu_data_loader_verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="290" column="48" lean-forward="true" selection-start-line="290" selection-start-column="48" selection-end-line="290" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/coco-caption/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/eval/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/eval/coco-caption/pycocoevalcap/cider/cider.py" />
+    <entry file="file://$PROJECT_DIR$/eval/eval_org.py" />
+    <entry file="file://$PROJECT_DIR$/eval/coco-caption/pycocoevalcap/tokenizer/ptbtokenizer.py" />
+    <entry file="file://$PROJECT_DIR$/eval/dudu_eval.py" />
+    <entry file="file://$PROJECT_DIR$/eval/coco-caption/pycocoevalcap/bleu/bleu_scorer.py" />
+    <entry file="file://$PROJECT_DIR$/eval/coco-caption/pycocoevalcap/bleu/bleu.py" />
+    <entry file="file://$PROJECT_DIR$/config/dataset_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" selection-start-line="22" selection-end-line="27" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/coco_dataset_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_processing/import_coco/import_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_processing/dataset_downloader/import_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pre_processing/make_sets/import_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_loader/SingleVideoPyTorchHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="132" column="12" lean-forward="true" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miscs/verify_coco.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_loader/GenericDataLoader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+        <state relative-caret-position="495">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <marker date="1542435434521" expanded="true" signature="224:229" ph="..." />
@@ -558,23 +718,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_loader/SingleVideoPyTorchHandler.py">
+    <entry file="file://$PROJECT_DIR$/extract_features/extract_resnet_features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="46" selection-end-column="23" />
+        <state relative-caret-position="279">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543269220353" expanded="true" signature="838:1051" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/remote_sources/1781803575/-1227933812/tensorflow/python/pywrap_tensorflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/place365_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extract_features/extract_obj_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543283085855" expanded="true" signature="1044:4037" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extract_features/twostream_rgb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/remote_sources/1781803575/-1227933812/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="531" selection-start-line="531" selection-end-line="531" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extract_features/extract_two_stream_rgb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extract_features/extract_resnet_features.py">
+    <entry file="file://$PROJECT_DIR$/extract_features/extract_place365_features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" selection-start-line="11" selection-end-line="12" selection-end-column="54" />
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1542480675505" expanded="true" signature="803:1016" ph="..." />
           </folding>
         </state>
       </provider>
