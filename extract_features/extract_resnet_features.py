@@ -1,14 +1,15 @@
 import os
 import sys
 sys.path.append("../")
-import config.dataset_config as data_cfg
 import utils.gen_utils as gen_utils
 import torchvision.models as models
 from data_loader.GenericDataLoader import *
 from data_loader.SingleVideoPyTorchHandler import *
 from torch import nn
 import gc
+import config.coco_dataset_config as data_cfg
 
+print data_cfg.video_root_path
 video_list_fn=data_cfg.all_list_fn
 video_list=gen_utils.read_dict_from_pkl(video_list_fn)
 
@@ -23,7 +24,7 @@ feat_root_path=os.path.join(data_cfg.feat_root_path,feat_type)
 if not os.path.exists(feat_root_path):
     os.makedirs(feat_root_path)
 
-RE_EXTRACT_ALL=False
+RE_EXTRACT_ALL=True
 
 MAX_CHUNK_SIZE=5
 
@@ -41,8 +42,8 @@ if  __name__=="__main__":
 
 
     video_list=filter_video_list_by_existing_feat(video_list)
-
-    handler = SingleVideoHandler(key_frame_interval=8, video_root_path="/home/jiangl1/data/datasets/TGIF/videos/")
+    #video_list = filter_video_list_by_existing_feat([9299])
+    handler = SingleVideoHandler(key_frame_interval=1, video_root_path=data_cfg.video_root_path)
     for id in video_list:
         cur_batch=handler.get_internal_data_batch([id])
         video_tensors, vid_ids = cur_batch['video'], cur_batch['id_list']

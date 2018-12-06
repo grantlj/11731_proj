@@ -2,7 +2,8 @@ import os
 import sys
 sys.path.insert(0,"../")
 
-import config.dataset_config as data_cfg
+#import config.dataset_config as data_cfg
+import config.coco_dataset_config as data_cfg
 import utils.gen_utils as gen_utils
 import tensorflow as tf
 import numpy as np
@@ -16,7 +17,7 @@ if not os.path.exists(feat_root_path):
     os.makedirs(feat_root_path)
 
 RE_EXTRACT=False
-key_frame_interval=8
+key_frame_interval=1
 score_th=0.4
 
 id2label_dict=gen_utils.read_dict_from_pkl("/home/jiangl1/data/datasets/TGIF/models/obj_det/faster_rcnn/id2label.pkl")
@@ -106,7 +107,7 @@ def handle_a_particular_list(vid_list,gpu_id):
     return
 
 if __name__=="__main__":
-    gpu_id_list=[5,6,7];num_gpu=len(gpu_id_list)
+    gpu_id_list=[6,7];num_gpu=len(gpu_id_list)
     sub_vid_lists=gen_utils.split_list_into_n_folder_parts(video_list,num_gpu)
 
     thread_pool=[]
