@@ -10,6 +10,12 @@ import argparse
 from data_loader.GenericDataLoader import DataLoader
 from data_loader.SingleVideoPyTorchHandler import VideoTextHandler
 
+#   nlg-eval --hypothesis=output.baseline.self_critic.txt --references=ref.baseline.self_critic.txt
+#   nlg-eval --hypothesis=output.baseline.jiac_i3d.motion_rgb.txt --references=ref.baseline.jiac_i3d.motion_rgb.txt
+#   nlg-eval --hypothesis=output.baseline.jiac_i3d.obj_det.txt --references=ref.baseline.jiac_i3d.obj_det.txt
+#   nlg-eval --hypothesis=output.baseline.jiac_i3d.place365_feat.txt --references=ref.baseline.jiac_i3d.place365_feat.txt
+#   nlg-eval --hypothesis=output.baseline.jiac_i3d.resnet50.txt --references=ref.baseline.jiac_i3d.resnet50.txt
+
 
 parser = argparse.ArgumentParser() 
 parser.add_argument('--model', type=str, default='baseline.self_critic')
@@ -22,7 +28,7 @@ def get_loader(split):
     elif split == 'valid':
         cfg_list_fn = data_cfg.val_list_fn
     else:
-        raise NotImplementedError
+        cfg_list_fn=data_cfg.tst_list_fn
     dataloader = DataLoader(img_list=pickle.load(open(cfg_list_fn, 'rb')),
                             batch_size=16,
                             num_worker=4,
@@ -39,8 +45,8 @@ def get_loader(split):
 model = torch.load('{}.pt'.format(config.model)).cuda()
 
 #dataloader = get_loader('valid')
-dataloader= get_loader('valid')
-
+#dataloader= get_loader('valid')
+dataloader=get_loader('test')
 best_loss = np.inf
 pat = 0
 cum_loss = 0
